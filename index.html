@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://kit.fontawesome.com/0dd92e976a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <p id="intro"></p>
+        <div class="buttons">
+            <botton class="btn" id="b7" onclick="func7()">7</botton>
+            <botton class="btn" id="b8" onclick="func8()">8</botton>
+            <botton class="btn" id="b9" onclick="func9()">9</botton>
+            <botton class="btn" id="bd" onclick="funcdiv()">/</botton>
+            <botton class="btn" id="b4" onclick="func4()">4</botton>
+            <botton class="btn" id="b5" onclick="func5()">5</botton>
+            <botton class="btn" id="b6" onclick="func6()">6</botton>
+            <botton class="btn" id="bmu" onclick="funcmul()">*</botton>
+            <botton class="btn" id="b1" onclick="func1()">1</botton>
+            <botton class="btn" id="b2" onclick="func2()">2</botton>
+            <botton class="btn" id="b3" onclick="func3()">3</botton>
+            <botton class="btn" id="bmi" onclick="funcmin()">-</botton>
+            <botton class="btn" id="b0" onclick="func0()">0</botton>
+            <botton class="btn" id="bcdt" onclick="funcdt()">.</botton>
+            <botton class="btn" id="bcbc" onclick="funcbc()"><i class="fas fa-backspace"></i></botton>
+            <botton class="btn" id="bp" onclick="funcpl()">+</botton>
+            <botton class="btn" id="bcby" onclick="funcby()">1/x</botton>
+            <botton class="btn" id="bcsq" onclick="funcsq()">x^2</botton>
+            <botton class="btn" id="beq" onclick="funceq()">=</botton>
+            <botton class="btn" id="bcl" onclick="funccl()">AC</botton>
+        </div>
+    </div>
+    <script>
+        function funcby() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            let d = 0;
+                d = parseFloat(str1);
+            str.innerHTML = 1/d;
+        }
+        function funcsq() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            let d = 0;
+                d = parseFloat(str1);
+            str.innerHTML = d*d;
+        }
+        function funcdt() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat(".");
+            str.innerHTML = str1;
+        }
+        function funcbc() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.substring(0,str1.length-1);
+            str.innerHTML = str1;
+        }
+        function func1() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("1");
+            str.innerHTML = str1;
+        }
+        function func2() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("2");
+            str.innerHTML = str1;
+        }
+        function func3() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("3");
+            str.innerHTML = str1;
+        }
+        function func4() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("4");
+            str.innerHTML = str1;
+        }
+        function func5() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("5");
+            str.innerHTML = str1;
+        }
+        function func6() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("6");
+            str.innerHTML = str1;
+        }
+        function func7() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("7");
+            str.innerHTML = str1;
+        }
+        function func8() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("8");
+            str.innerHTML = str1;
+        }
+        function func9() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("9");
+            str.innerHTML = str1;
+        }
+        function func0() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("0");
+            str.innerHTML = str1;
+        }
+        function funcpl() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("+");
+            str.innerHTML = str1;
+        }
+        function funcmin() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("-");
+            str.innerHTML = str1;
+        }
+        function funcmul() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("*");
+            str.innerHTML = str1;
+        }
+        function funcdiv() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = str1.concat("/");
+            str.innerHTML = str1;
+        }
+        function funceq() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            let n = "", n1 = 0, c = 1; let sign = 'f',num=0;
+            for (let i = 0; i < str1.length; i++) {
+                if (str1[i] != '+' && str1[i] != '-' && str1[i] != '*' && str1[i] != '/') {
+                    // n = n * 10 + ((str1.charCodeAt(i)) - 48);
+                    n=n+str1[i];
+                    num=parseFloat(n);
+                }
+                if (sign == '+' && c != 1 && (str1[i + 1] == '+' || str1[i + 1] == '-' || str1[i + 1] == '*' || str1[i + 1] == '/' || i == str1.length - 1)) {
+                    n1 = n1 + num;
+                    num=0;
+                    n = "";
+                    sign = 'f';
+                    c = 1;
+                }
+                if (sign == '-' && c != 1 && (str1[i + 1] == '+' || str1[i + 1] == '-' || str1[i + 1] == '*' || str1[i + 1] == '/' || i == str1.length - 1)) {
+                    n1 = n1 - num;
+                    num=0;
+                    n = "";
+                    sign = 'f';
+                    c = 1;
+                }
+                if (sign == '*' && c != 1 && (str1[i + 1] == '+' || str1[i + 1] == '-' || str1[i + 1] == '*' || str1[i + 1] == '/' || i == str1.length - 1)) {
+                    n1 = n1 * num;
+                    num=0;
+                    n = "";
+                    sign = 'f';
+                    c = 1;
+                }
+                if (sign == '/' && c != 1 && (str1[i + 1] == '+' || str1[i + 1] == '-' || str1[i + 1] == '*' || str1[i + 1] == '/' || i == str1.length - 1)) {
+                    n1 = n1 / num;
+                    num=0;
+                    n = "";
+                    sign = 'f';
+                    c = 1;
+                }
+                if (sign == 'f' && n != 0) {
+                    n1 = num;
+                }
+                if ((str1[i] == '+' || str1[i] == '-' || str1[i] == '*' || str1[i] == '/') && c == 1) {
+                    sign = str1[i];
+                    c++;
+                    n = "";
+                    num=0;
+                }
+            }
+            // str1 = str1.concat(n1);
+            str.innerHTML = n1;
+        }
+        function funccl() {
+            let str = document.getElementById("intro");
+            str1 = str.innerHTML;
+            str1 = "";
+            str.innerHTML = str1;
+        }
+    </script>
+</body>
+
+</html>

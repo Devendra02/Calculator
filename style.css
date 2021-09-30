@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+body::before{
+    content: "";
+    background: url('../Calculator/bg.jpg') center center  fixed;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.container{
+    height:400px;
+    width:300px;
+    display: inline-block;
+    position: relative; 
+    top: 100px;
+    /* left: 550px;  */
+    font-family: 'Ubuntu', sans-serif;
+}
+#intro{
+    /* background-color:rgb(11, 80, 158); */
+    border-radius: 12px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    overflow-y: auto;
+    border: 2px solid rgb(138, 164, 214);
+    margin-top: 10px;
+}
+
+.btn{
+    background-color: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid rgb(75, 41, 230);
+    border-radius: 7px;
+}
+
+.btn:hover{
+    background-color: rgb(22, 99, 214);
+    color: black;
+}
+
+.buttons{
+    display: grid;
+    grid-template-areas:
+    'b7 b8 b9 bd'
+    'b4 b5 b6 bmu'
+    'b1 b2 b3 bmi'
+    'b0 bcdt bcbc bp'
+    'bcby bcsq beq bcl';
+    grid-gap: 4px;
+    margin-top: 10px;
+}
+#bcby{
+    grid-area: bcby;
+    font-size: 28px;
+}
+#bcsq{
+    grid-area: bcsq;
+    font-size: 28px;
+}
+#bcdt{
+    grid-area: bcdt;
+    font-size: 28px;
+    text-align: center;
+}
+#bcbc{
+    grid-area: bcbc;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#b1{
+    grid-area: b1;
+}
+#b2{
+    grid-area: b2;
+}
+#b3{
+    grid-area: b3;
+}
+#b4{
+    grid-area: b4;
+}
+#b5{
+    grid-area: b5;
+}
+#b6{
+    grid-area: b6;
+}
+#b7{
+    grid-area: b7;
+}
+#b8{
+    grid-area: b8;
+}
+#b9{
+    grid-area: b9;
+}
+#b0{
+    grid-area: b0;
+}
+#bp{
+    grid-area: bp;
+}
+#bmi{
+    grid-area: bmi;
+}
+#bmu{
+    grid-area: bmu;
+}
+#bd{
+    grid-area: bd;
+}
+#beq{
+    grid-area: beq;
+    background-color: rgb(51, 117, 240);
+    color: black;
+}
+#bcl{
+    grid-area: bcl;
+    display: flex;
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+}
